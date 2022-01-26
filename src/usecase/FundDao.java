@@ -7,7 +7,7 @@ public interface FundDao {
 
 	List<Fund> findFund(String accNumber) throws Exception;
 
-	void updateFund(BigDecimal saiBalAmount, long accNumber) throws Exception;
+	 public void updateFund(BigDecimal saiBalAmount, long accNumber) throws Exception;
 	
 	
 

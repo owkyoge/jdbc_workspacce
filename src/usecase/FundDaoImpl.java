@@ -11,7 +11,7 @@ import java.util.List;
 public class FundDaoImpl implements FundDao {
 
 	
-	Connection con = null;
+	Connection con;
 	
 	public FundDaoImpl (Connection con) {
 		this.con = con;
@@ -31,8 +31,9 @@ public class FundDaoImpl implements FundDao {
 		
 			 fund.setAccNumber(result.getLong("ACC_NO"));
 			 fund.setAccName(result.getString("ACC_NAME"));
-			 BigDecimal amount = new BigDecimal(result.getString("AMOUNT"));
-			 fund.setAmount(amount);
+			// BigDecimal amount = new BigDecimal(result.getString("AMOUNT"));
+		// 	 fund.setAmount(amount);
+			 fund.setAmount(result.getBigDecimal(""));
 			 fund.setIsActive(result.getString("IS_ACTIVE"));
 			 fund.setCreatedBy(result.getString("CREATED_BY"));
 			 fund.setCreatedDt(result.getDate("CREATED_DT"));
